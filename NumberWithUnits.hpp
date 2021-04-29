@@ -80,13 +80,13 @@ namespace ariel
             return NumberWithUnits(curr._amount * num, curr._unit);
         }
         // comparison operators
-        bool operator>(NumberWithUnits &num) const;
-        bool operator>=(NumberWithUnits &num) const;
-        bool operator<(NumberWithUnits &num) const;
-        bool operator<=(NumberWithUnits &num) const;
+        bool operator>(const NumberWithUnits &num) const;
+        bool operator>=(const NumberWithUnits &num) const;
+        bool operator<(const NumberWithUnits &num) const;
+        bool operator<=(const NumberWithUnits &num) const;
      //   bool operator==(NumberWithUnits& num1) const;
-        bool operator!=(NumberWithUnits &num) const;
-        bool operator==(NumberWithUnits num) const;
+        bool operator!=(const NumberWithUnits &num) const;
+        bool operator==(const NumberWithUnits num) const;
 
         //ostream operations
         friend ostream &operator<<(ostream &output, const NumberWithUnits &num);
