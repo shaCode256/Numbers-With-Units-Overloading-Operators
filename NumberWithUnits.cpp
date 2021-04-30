@@ -161,8 +161,15 @@ istream &ariel::operator>>(istream &input, NumberWithUnits &num)
         }
     }
     double amount = std::stod(strNum);
+    if(NumberWithUnits::unitsMap.find(unit)!=NumberWithUnits::unitsMap.end()){ //if there is a unit like that and amount is a number
     num._amount = amount;
     num._unit = unit;
+    }
+    else{
+        throw exception();
+    }
+    // num._amount = amount;
+    // num._unit = unit;
     return input;
 }
 
@@ -174,10 +181,14 @@ double NumberWithUnits::convertAmount(string unitFrom, string unitTo)
         {
             return (NumberWithUnits::unitsMap[unitFrom][unitTo]);
         }
+        else
+        {
+             throw exception(); //not known conversion
+        }
     }
         else
         {
-            // throw exception(); //not known conversion
+             throw exception(); //not known conversion
         }
     return 0;
 }

@@ -22,8 +22,13 @@ namespace ariel
         static map<string, map<string, double>> unitsMap;
         NumberWithUnits(const double &amount, const string &unit)
         {
+            if(unitsMap.find(unit)!=unitsMap.end()){ //if there is a unit like that and amount is a number
             _amount = amount;
             _unit = unit;
+            }
+            else {
+                throw exception();
+            }
         }
 
         // initalizing ("empty") constructor
