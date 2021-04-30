@@ -39,7 +39,7 @@ namespace ariel
         //calc operators:
         NumberWithUnits operator+()
         { //plus unary
-            return NumberWithUnits(abs(_amount), _unit);
+            return NumberWithUnits(_amount, _unit);
         }
         NumberWithUnits operator-()
         { // minus unary
